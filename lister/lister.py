@@ -257,6 +257,8 @@ class TimelineTracker:
 
     def __post_init__(self):
         self.timelines = dict()
+        logger.debug("Notify filter: {}", TRIGGERS)
+        logger.debug("Ignore filter: {}", IGNORE)
 
     async def run(self):
         api = tweepy.API(auth)
