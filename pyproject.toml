@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "lister"
+version = "0.1.6"
+description = "Pull and Parse Twitter Lists for Data Streams"
+authors = ["Matt Stancliff <matt@genges.com>"]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+tweepy = "^3.10.0"
+
+loguru = "^0.5.3"
+peewee = "^3.14.4"
+arrow = "^1.1.0"
+fire = "^0.4.0"
+python-dotenv = "^0.18.0"
+
+[tool.poetry.scripts]
+lister = "lister.__main__:runit"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
