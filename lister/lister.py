@@ -16,6 +16,7 @@ from . import tables  # local sqlite/table manipulation
 
 import socket
 import urllib3.exceptions
+from pathlib import Path
 
 import os
 import asyncio
@@ -64,7 +65,7 @@ def trigger(what) -> bool:
 
 @dataclass
 class Storage:
-    filename: str
+    filename: Path
 
     def __post_init__(self):
         pragmas = [("journal_mode", "wal"), ("cache_size", -1000 * 32)]

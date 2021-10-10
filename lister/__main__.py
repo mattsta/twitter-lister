@@ -3,12 +3,18 @@ from . import lister
 import asyncio
 from loguru import logger
 
+from pathlib import Path
 
-def cmd(db, *lists):
+
+def cmd(db: str, *lists):
     """Fetch twitter lists 'lists' into DB"""
     logger.info("[{}] Reading from lists: {}", db, lists)
 
-    s = lister.Storage(db)
+    # Convert DB str to Path and create directory for it (if needed)
+    fullDB = Path(db)
+    fullDB.parent.mkdir(parents=True, exist_ok=True)
+
+    s = lister.Storage(fullDB)
 
     # simple search example:
     # for t in s.search("alert OR unusual OR uo OR trigger"):
