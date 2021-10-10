@@ -119,7 +119,7 @@ class ListTimeline:
     lastFetchId: int = 0
     history: deque = field(default_factory=lambda: deque(maxlen=1024))
     nextUpdate: float = now()
-    defaultDaysBackLoad: int = 3
+    defaultDaysBackLoad: int = 30
 
     async def bootstrap(self, storage: Storage):
         """Load timeline back to 3 days worth of tweets"""
