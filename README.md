@@ -1,6 +1,18 @@
 twitter-lister: download twitter lists into fts sqlite db
 =========================================================
 
+### 2023 Update
+
+I had this running in a loop for years, but the API stopped working for me in July 2023.
+
+For my own usage, I was logging 7 lists in real time which would now cost
+$370,000 per month using paid API calls under New Management.
+
+So... good luck with that?
+
+
+### Hello TL
+
 `lister` lets you save all tweets in your subscribed twitter lists in ~real time to a full text search sqlite db.
 
 ## Features
